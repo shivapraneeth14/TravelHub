@@ -63,7 +63,7 @@ function Stays() {
             </div>
           ))
         ) : (
-          <p>No restaurants found.</p>
+          <p className=' text-center'>Loading restaurants ...</p>
         )}
       </div>
     </div>

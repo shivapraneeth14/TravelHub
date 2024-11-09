@@ -17,7 +17,6 @@ function Login() {
 
     try {
       const response = await axios.post('http://localhost:3000/api/Login', user);
-      // Assuming response contains user information
       const username = response.data.loggedinuser.username;
       console.log("Navigating to home");
       navigate(`/user/${response.data.loggedinuser.username}`);

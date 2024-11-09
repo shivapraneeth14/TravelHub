@@ -10,10 +10,10 @@ const fileUploader = async (filePath) => {
         const result = await cloudinary.uploader.upload(filePath, {
             resource_type: "auto" 
         });
-        console.log(result.url);
+        console.log("cloudinary result",result.url);
         return result;
     } catch (error) {
-        console.error(error);
+        console.error("clodnary errro ",error);
         throw error;
     }
 };

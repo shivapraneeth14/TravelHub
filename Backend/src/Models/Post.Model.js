@@ -11,19 +11,14 @@ const postSchema = new mongoose.Schema({
       required: true,  
       trim: true        
     },
-    image: {
-      url: {
-        type: String,  
-        required: true
-      },
-      location: {
-        type: {
-          type: String,  
-          required: true
-        },
-       
-      }
-    },
+   imageUrl:{
+    type:String,
+    required:true,
+   },
+   location:{
+    type:String,
+    
+   },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',  

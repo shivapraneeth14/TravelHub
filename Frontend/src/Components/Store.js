@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import Travelreducer from './TravelSlice'; 
+import {Travelreducer} from './TravelSlice.js'
 
 export const store = configureStore({
     reducer: {

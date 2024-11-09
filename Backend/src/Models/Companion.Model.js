@@ -5,7 +5,7 @@ const companionSchema = new mongoose.Schema({
   locationToGo: {
     type: String,
     required: true, 
-    trim: true        
+    trim: true       
   },
   transport: {
     type: String,
@@ -20,8 +20,10 @@ const companionSchema = new mongoose.Schema({
     type: Date,
     required: true 
   },
- 
-  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  user: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User', 
+    required: true },
   createdAt: {
     type: Date,
     default: Date.now  
