@@ -18,7 +18,7 @@ function Signup() {
     };
     
     try {
-      const response = await axios.post('http://localhost:3000/api/register', user);
+      const response = await axios.post(`${process.env.BACKEND_URL}/api/register`, user);
       console.log(response.data);
       navigate("");
     } catch (error) {

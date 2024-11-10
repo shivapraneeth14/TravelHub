@@ -18,7 +18,7 @@ function Social() {
   useEffect(() => {
     const getUserId = async () => {
       try {
-        const response = await axios.post("http://localhost:3000/api/getuserid", { username: username });
+        const response = await axios.post(`${process.env.BACKEND_URL}/api/getuserid`, { username: username });
         setUserId(response.data.userid);
         setNewPost(prev => ({ ...prev, userId: response.data.userid }));
       } catch (error) {
@@ -31,7 +31,7 @@ function Social() {
   useEffect(() => {
     const getPosts = async () => {
       try {
-        const response = await axios.post("http://localhost:3000/api/allposts");
+        const response = await axios.post(`${process.env.BACKEND_URL}/api/allposts`);
         setPosts(response.data.posts);
       } catch (error) {
         console.error(error);
@@ -59,7 +59,7 @@ function Social() {
       formData.append('userId', newPost.userId);
       formData.append('imageUrl', newPost.imageUrl); 
 
-      const response = await axios.post('http://localhost:3000/api/addpost', formData, {
+      const response = await axios.post(`${process.env.BACKEND_URL}/api/addpost`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 

@@ -7,6 +7,7 @@ function Login() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  axios.defaults.withCredentials = true;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ function Login() {
     };
 
     try {
-      const response = await axios.post('http://localhost:3000/api/Login', user);
+      const response = await axios.post(`${process.env.BACKEND_URL}/api/login`, user);
       const username = response.data.loggedinuser.username;
       console.log("Navigating to home");
       navigate(`/user/${response.data.loggedinuser.username}`);
