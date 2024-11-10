@@ -20,7 +20,7 @@ function Group() {
 
     const getUserId = async () => {
       try {
-        const response = await axios.post(`${process.env.BACKEND_URL}/api/getuserid`, { username });
+        const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/getuserid`, { username });
         console.log("Response data for user ID:", response.data);
 
         setUserId(response.data.userid);
@@ -39,7 +39,7 @@ function Group() {
     const getGroups = async () => {
       try {
         console.log("Fetching groups...");
-        const response = await axios.post(`${process.env.BACKEND_URL}/api/allcompanion`);
+        const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/allcompanion`);
         console.log("Groups response data:", response.data);
 
         setGroups(Array.isArray(response.data.groups) ? response.data.groups : []);
@@ -67,7 +67,7 @@ function Group() {
 
     try {
       console.log("Submitting form data:", formData);
-      const response = await axios.post(`${process.env.BACKEND_URL}/api/getcompanion`, formData);
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/getcompanion`, formData);
       alert('Companion request submitted successfully!');
       console.log('Submission response:', response.data);
 

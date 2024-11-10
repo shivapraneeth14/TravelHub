@@ -30,6 +30,7 @@ app.use("/api", router);
 connect()
   .then(() => {
     app.listen(PORT, () => {
+      console.log(process.env.FRONTEND_URL)
       console.log(`Server is running on http://localhost:${PORT}`);
       console.log('Routes are: /api/register, /api/login');
     });

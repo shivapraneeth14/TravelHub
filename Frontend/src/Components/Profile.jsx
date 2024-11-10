@@ -11,7 +11,7 @@ function Profile() {
     useEffect(() => {
         const getUserProfile = async () => {
             try {
-                const response = await axios.get(`${process.env.BACKEND_URL}/api/userprofile`, {
+                const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/userprofile`, {
                     params: { username }
                 });
                 setProfile(response.data.user); 

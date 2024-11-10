@@ -14,7 +14,7 @@ const AI = () => {
                 setLoading(true);
                 setError(null);
                 try {
-                    const response = await axios.get(`${process.env.BACKEND_URL}/api/getplaces`, {
+                    const response = await axios.get(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/getplaces`, {
                         headers: {
                             location, 
                         },

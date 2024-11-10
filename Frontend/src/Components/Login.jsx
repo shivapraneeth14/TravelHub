@@ -8,16 +8,16 @@ function Login() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = {
       loginname: loginname,
       password: password,
     };
-
+    
     try {
-      const response = await axios.post(`${process.env.BACKEND_URL}/api/login`, user);
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/login`, user);
       const username = response.data.loggedinuser.username;
       console.log("Navigating to home");
       navigate(`/user/${response.data.loggedinuser.username}`);

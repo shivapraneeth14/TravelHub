@@ -286,6 +286,10 @@ const allposts = async(req,res)=>{
     try {
         const posts = await Post.find()
         console.log(posts)
+        if(posts.length == 0){
+            return res.status(500).json({message:"no Posts"})
+        }
+
         if(!posts){
             return res.status(500).json({message:"no posts found"})
         }

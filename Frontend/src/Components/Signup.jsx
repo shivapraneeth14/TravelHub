@@ -18,7 +18,7 @@ function Signup() {
     };
     
     try {
-      const response = await axios.post(`${process.env.BACKEND_URL}/api/register`, user);
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/register`, user);
       console.log(response.data);
       navigate("");
     } catch (error) {
