@@ -17,6 +17,7 @@ function Login() {
     };
     
     try {
+      console.log(import.meta.env.VITE_REACT_APP_BACKEND_URL)
       const response = await axios.post(`${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/login`, user);
       const username = response.data.loggedinuser.username;
       console.log("Navigating to home");
