@@ -7,7 +7,7 @@ import connect from './src/Db/index.js';
 import router from './src/Routes/User.Routes.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import serverless from 'serverless-http';
 
 dotenv.config();
 
@@ -38,3 +38,4 @@ connect()
   .catch((err) => {
     console.error("MongoDB connection error:", err);
   });
+export default serverless(app);
