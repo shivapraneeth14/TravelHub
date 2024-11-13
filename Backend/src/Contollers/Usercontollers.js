@@ -1,5 +1,6 @@
 import User from "../Models/User.model.js";
-import bcrypt from 'bcrypt';
+// import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import Companion from "../Models/Companion.Model.js";
 import Post from "../Models/Post.Model.js";
 import path from 'path';
