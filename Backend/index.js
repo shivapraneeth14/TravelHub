@@ -20,9 +20,7 @@ app.use(cookieParser());
 // Serve static assets via Vercel public folder instead of Express (Vercel automatically serves static files from `public`)
 console.log("Starting serverless function...");
 
-app.get("/health", (req, res) => {
-  res.status(200).send("Server is healthy!");
-});
+
 
 // Database connection check
 const initializeDbConnection = async () => {
@@ -38,7 +36,7 @@ const initializeDbConnection = async () => {
 app.use(async (req, res, next) => {
   if (!global.dbConnection) {
     await initializeDbConnection();
-    global.dbConnection = true;
+    global.dbConnection = true
   }
   next();
 });
