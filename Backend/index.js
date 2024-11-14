@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { response } from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import connect from './src/Db/index.js';
@@ -25,7 +25,8 @@ console.log("Starting serverless function...");
 // Database connection check
 const initializeDbConnection = async () => {
   try {
-    await connect();
+   const response =  await connect();
+   console.log("connect response",response)
     console.log("MongoDB connection established.");
   } catch (err) {
     console.error("MongoDB connection error:", err);
