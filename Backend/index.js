@@ -27,7 +27,9 @@ app.use(express.static('Public'));
 app.use("/api", router);
 
 let isDatabaseConnected = false;
-
+app.get('/', (req, res) => {
+  res.send('Hello, world!');
+});
 async function establishConnection() {
   if (!isDatabaseConnected) {
     try {
