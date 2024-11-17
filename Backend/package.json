@@ -5,7 +5,10 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "echo 'No build step required'",
+    "vercel-build": "echo 'Building for Vercel...'",
+    "install": "npm install"
   },
   "author": "",
   "license": "ISC",
